@@ -1,1 +1,166 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070714">
+<title>The Unwritten Universe</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#070714;color:#fff;font-family:Georgia,serif;overflow-x:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+section{position:relative;z-index:1;min-height:100vh;padding:70px 23px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.hero{background:radial-gradient(ellipse at center,#30204b 0%,#111024 42%,#070714 78%)}
+.eyebrow{font:10px Arial,sans-serif;letter-spacing:5px;color:#c9aaff;text-transform:uppercase}
+h1{font-size:clamp(43px,11vw,78px);font-weight:normal;line-height:1.08;margin:28px 0}
+h2{font-size:clamp(32px,8vw,52px);font-weight:normal;line-height:1.2}
+p{font-size:18px;line-height:1.85;color:#d5cfe6;max-width:620px}
+.glow{color:#e0caff;text-shadow:0 0 30px #a66bff}
+button{border:1px solid #c5a1ff;border-radius:40px;background:#ffffff09;color:white;padding:15px 27px;margin-top:25px;letter-spacing:2px;font-size:12px}
+button:active{background:#70469c}
+.divider{width:55px;height:1px;background:#c09aff;margin:25px}
+.card{width:min(100%,560px);padding:25px 22px;margin:15px 0;background:#ffffff09;border:1px solid #55416e;border-radius:20px;box-shadow:0 0 35px #7d52a510}
+.chapter{background:radial-gradient(ellipse at center,#1b1833,#070714 72%)}
+.letter{white-space:pre-line;text-align:left;font-size:18px;line-height:2;color:#e0d8ee}
+.orb{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f4e7ff,#a77bea 18%,#39235e 48%,#090817 75%);box-shadow:0 0 65px #9c6bff70;margin:30px}
+#name{font-size:clamp(40px,12vw,83px);letter-spacing:8px;opacity:0;transition:opacity 4s;text-shadow:0 0 35px #c39aff}
+#endingText{opacity:0;transition:opacity 3s}
+.small{font:10px Arial;letter-spacing:3px;color:#a89bbd}
+footer{position:relative;z-index:1;text-align:center;padding:30px;color:#827791;font:10px Arial;letter-spacing:3px}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+
+<section class="hero">
+ <div class="eyebrow">A story written without words</div>
+ <h1>THE<br>UNWRITTEN<br><span class="glow">UNIVERSE</span></h1>
+ <div class="divider"></div>
+ <p>Some feelings are too big for ordinary words. So I made them a universe of their own.</p>
+ <button onclick="enter()">STEP INSIDE ✦</button>
+ <p class="small">TAKE YOUR TIME</p>
+</section>
+
+<section class="chapter">
+ <div class="eyebrow">01 · A little reminder</div>
+ <div class="orb"></div>
+ <h2>Before you see<br>anything else...</h2>
+ <p class="glow">I hope you never forget how special you are.</p>
+ <p>Not because somebody says it. Not because somebody chooses you. But because your worth was never something you needed another person to give you.</p>
+</section>
+
+<section class="chapter">
+ <div class="eyebrow">02 · The things that matter</div>
+ <h2>There is beauty<br>in being yourself.</h2>
+ <div class="card">
+  <p>Your little expressions.</p>
+  <p>Your unique way of speaking.</p>
+  <p>Your laughter, your voice, your little world.</p>
+  <p>Things that may feel ordinary to you can be unforgettable to someone else.</p>
+ </div>
+ <p class="glow">Never change your light just because somebody cannot see it.</p>
+</section>
+
+<section class="chapter">
+ <div class="eyebrow">03 · What I wish for you</div>
+ <h2>A world you<br><span class="glow">truly deserve.</span></h2>
+ <div class="card">
+  <p>I hope you get happiness that stays.</p>
+  <p>People who respect your heart.</p>
+  <p>Dreams that become real.</p>
+  <p>Love that never makes you question your worth.</p>
+  <p>And a life where you never have to become less of yourself to be accepted.</p>
+ </div>
+</section>
+
+<section class="chapter">
+ <div class="eyebrow">04 · Something from my heart</div>
+ <h2>Things I never<br>knew how to say.</h2>
+ <div class="card">
+  <p class="letter">I don't know how to explain every feeling.
+
+But I know that you became someone special in my world.
+
+I wanted to make something that could tell you what ordinary conversations never quite could.
+
+I don't expect anything from you.
+
+I just wanted to open my heart, honestly and without hiding.
+
+Your happiness matters. Your dreams matter. And you should never think of yourself as less than you are.</p>
+ </div>
+</section>
+
+<section class="chapter">
+ <div class="eyebrow">05 · Your story is yours</div>
+ <h2>I won't write<br>your story for you.</h2>
+ <p>Maybe our paths will be different. Maybe life has something else written for you.</p>
+ <p>Whatever you choose, your choice deserves respect.</p>
+ <p class="glow">I only wanted you to know what you have meant in my story.</p>
+</section>
+
+<section class="chapter" id="last">
+ <div class="eyebrow">One last little thing</div>
+ <div class="orb"></div>
+ <button onclick="reveal()">OPEN THE LAST SECRET ✦</button>
+ <div id="name">ARESHEY</div>
+ <div id="endingText">
+  <h2 class="glow">This little universe<br>was always yours.</h2>
+  <div class="divider"></div>
+  <p>Not because the universe needed a name.</p>
+  <p>But because this one needed a reason.</p>
+  <p>Never forget: you are special. Always.</p>
+  <p class="small">MADE WITH HONEST FEELINGS</p>
+ </div>
+</section>
+
+<footer>THE UNWRITTEN UNIVERSE · A LITTLE WORLD FROM THE HEART</footer>
+
+<script>
+const canvas=document.getElementById("sky");
+const ctx=canvas.getContext("2d");
+let stars=[];
+function resize(){
+ canvas.width=innerWidth*devicePixelRatio;
+ canvas.height=innerHeight*devicePixelRatio;
+ ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+ stars=Array.from({length:Math.min(180,Math.floor(innerWidth/2))},()=>({
+  x:Math.random()*innerWidth,
+  y:Math.random()*innerHeight,
+  r:Math.random()*1.5+.2,
+  phase:Math.random()*6
+ }));
+}
+function animate(){
+ ctx.clearRect(0,0,innerWidth,innerHeight);
+ stars.forEach(s=>{
+  s.phase+=.012;
+  ctx.beginPath();
+  ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+  ctx.fillStyle="rgba(226,211,255,"+(.25+Math.abs(Math.sin(s.phase))*.7)+")";
+  ctx.fill();
+ });
+ requestAnimationFrame(animate);
+}
+resize();
+animate();
+addEventListener("resize",resize);
+
+function enter(){
+ document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
+}
+function reveal(){
+ document.getElementById("last").scrollIntoView({behavior:"smooth"});
+ setTimeout(()=>{
+  document.getElementById("name").style.opacity="1";
+ },500);
+ setTimeout(()=>{
+  document.getElementById("endingText").style.opacity="1";
+ },3500);
+}
+</script>
+</body>
+  </html>
+
